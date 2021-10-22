@@ -1,4 +1,4 @@
-# MJ Coffee App - Full-stack app with Flutter and Firebase Workshop
+# Full-stack app with Flutter and Firebase Workshop
 
 The repository is supposed to be used for the my workshops.
 
