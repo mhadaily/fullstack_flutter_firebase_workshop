@@ -33,13 +33,13 @@ Coffee _coffeeFrom(String s) {
 }
 
 final router = GoRouter(
-  redirect: (GoRouterState state) {
-    final loggedIn = loginInfo.isLoggedIn;
-    final isLogging = state.location == '/login';
-    if (!loggedIn && !isLogging) return '/login';
-    if (loggedIn && isLogging) return '/';
-    return null;
-  },
+  // redirect: (GoRouterState state) {
+  //   final loggedIn = loginInfo.isLoggedIn;
+  //   final isLogging = state.location == '/login';
+  //   if (!loggedIn && !isLogging) return '/login';
+  //   if (loggedIn && isLogging) return '/';
+  //   return null;
+  // },
   observers: <NavigatorObserver>[AnalyticsService.observer],
   refreshListenable: loginInfo,
   urlPathStrategy: UrlPathStrategy.path,

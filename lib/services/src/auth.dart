@@ -113,6 +113,7 @@ class AuthService {
   }
 
   Future<User?> signInWithGoogle() async {
+    print('signInWithGoogle');
     try {
       final GoogleSignIn googleSignIn = GoogleSignIn(
         scopes: [
@@ -123,6 +124,7 @@ class AuthService {
       final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
       // sign in process was aborted
       if (googleUser != null) {
+        print(googleUser);
         final googleAuth = await googleUser.authentication;
         final userCredential = await _firebaseAuth.signInWithCredential(
           GoogleAuthProvider.credential(
@@ -131,10 +133,14 @@ class AuthService {
           ),
         );
         return userCredential.user;
+      } else {
+        showAlertDialog('SignIn with Google is cancelled by user!');
       }
     } on FirebaseAuthException catch (e) {
+      print('signInWithGoogle FirebaseAuthException');
       showAlertDialog(e.message ?? 'SignIn with Google failed');
     } catch (e) {
+      print('signInWithGoogle e');
       showAlertDialog(e.toString());
     }
   }
