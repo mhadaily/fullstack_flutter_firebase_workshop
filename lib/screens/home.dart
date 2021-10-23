@@ -62,10 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         backgroundColor: MaterialStateProperty.all(darkBrown),
                       ),
                       onPressed: () {
-                        GoRouter.of(context).goNamed(
-                          'login',
-                          extra: loginScaffoldKey,
-                        );
+                        GoRouter.of(context).goNamed('register');
                       },
                       child: const Text(
                         "Register",

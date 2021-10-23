@@ -4,6 +4,7 @@ import 'package:mjcoffee/screens/cart.dart';
 import 'package:mjcoffee/screens/forgot_password.dart';
 import 'package:mjcoffee/screens/login_email.dart';
 import 'package:mjcoffee/screens/profile.dart';
+import 'package:mjcoffee/screens/register.dart';
 import 'package:mjcoffee/services/src/analytics.dart';
 
 import 'const.dart';
@@ -60,6 +61,14 @@ final router = GoRouter(
       pageBuilder: (context, state) => MaterialPage(
         key: state.pageKey,
         child: const HomeScreen(),
+      ),
+    ),
+    GoRoute(
+      name: 'register',
+      path: '/register',
+      pageBuilder: (context, state) => MaterialPage(
+        key: state.pageKey,
+        child: RegisterScreen(),
       ),
     ),
     GoRoute(

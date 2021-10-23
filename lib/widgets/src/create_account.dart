@@ -17,7 +17,7 @@ class CreateAccount extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            GoRouter.of(context).goNamed('home');
+            GoRouter.of(context).goNamed('register');
           },
           child: Text(
             " Register",
